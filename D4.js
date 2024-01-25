@@ -89,19 +89,20 @@ console.log(epify("EPICODE AMICI CIAO"));
 
 function check3and7(num) {
   if (num % 3 === 0) {
-    ("è Un multiplo  di 3");
+    console.log("è Un multiplo  di 3");
   } else {
-    ("non è Un multiplo  di 3");
+    console.log("non è Un multiplo  di 3");
   }
   if (num % 7 === 0) {
-    ("è Un multiplo  di 7");
+    console.log("è Un multiplo  di 7");
   } else {
+    console.log("non è Un multiplo  di 7");
   }
 
   return;
 }
 
-console.log(check3and7(6));
+console.log(check3and7(14));
 
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
@@ -135,10 +136,11 @@ console.log(reverseString("ciao"));
 function upperFirst(str) {
   return str
     .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1)) //.map(word)=> prendi ogni prima lettera e facci qualcosa .
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
+  //.map(word)=> prendi ogni prima lettera e facci qualcosa .
 }
-console.log(upperFirst("ciao mondo"));
+console.log(upperFirst("ciao come stai"));
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
@@ -147,8 +149,24 @@ console.log(upperFirst("ciao mondo"));
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+function cutString(str) {
+  if (str.length <= 2) {
+    return "";
+  }
+  return str.slice(1, -1);
+}
+console.log(cutString("omaewa"));
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+function giveMeRandom(n) {
+  let array = [];
+  for (let i = 0; i < n; i++) {
+    array.push(Math.floor(Math.random() * 11));
+  }
+  return array;
+}
+
+console.log(giveMeRandom(100));
